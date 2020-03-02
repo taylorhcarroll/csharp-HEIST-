@@ -1,6 +1,6 @@
 namespace heist
 {
-    public class Heister
+    public class Crew
     {
         public string Name { get; set; }
 
