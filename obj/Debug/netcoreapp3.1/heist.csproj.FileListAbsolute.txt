@@ -1,0 +1,3 @@
+/Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.csprojAssemblyReference.cache
+/Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.AssemblyInfoInputs.cache
+/Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.AssemblyInfo.cs
