@@ -12,7 +12,7 @@ namespace heist
             List<Crew> Crew = new List<Crew>();
             Console.WriteLine("Plan Your Heist!");
             Console.WriteLine(@"
-                     ||====================================================================||
+||====================================================================||
 ||//$\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//$\\||
 ||(100)==================| FEDERAL RESERVE NOTE |================(100)||
 ||\\$//        ~         '------========--------'                \\$//||
@@ -22,8 +22,8 @@ namespace heist
 ||>>|         \$/            ||  $$ --/  ||        One Hundred     |<<||
 ||<<|      L38036133B        *\\  |\_/  //* series                 |>>||
 ||>>|  12                     *\\/___\_//*   1989                  |<<||
-||<<\      Treasurer     ______/Franklin\________     Secretary 12 />>||
-||//$\                 ~|UNITED STATES OF AMERICA|~               /$\\||
+||<<\      Treasurer     ________/HEIST\_________     Secretary 12 />>||
+||//$\                 ~|  HIDDEN IN PLAIN SIGHT |~               /$\\||
 ||(100)===================  ONE HUNDRED DOLLARS =================(100)||
 ||\\$//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\$//||
 ||====================================================================||
@@ -65,14 +65,15 @@ namespace heist
                     Console.WriteLine("What is the team member's skill level?");
                     string skillLevelString = Console.ReadLine();
                     int skillLevel;
+
                     try
                     {
                         skillLevel = int.Parse(skillLevelString);
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine($"{skillLevelString} is not a number, so you're getting 5");
-                        skillLevel = 5;
+                        Console.WriteLine($"{skillLevelString} is not a number, so you're getting 10.");
+                        skillLevel = 10;
                     }
 
                     Console.WriteLine("How would you rate the team member's courage factor?");
