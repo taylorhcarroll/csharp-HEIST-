@@ -28,7 +28,14 @@ namespace heist
 ||====================================================================||
             ");
             Console.WriteLine();
-            Console.WriteLine("Plan Your Heist!");
+            Console.WriteLine("Plan Your...");
+            Console.WriteLine(@"
+ __  __     ______     __     ______     ______
+/\ \_\ \   /\  ___\   /\ \   /\  ___\   /\__  _\
+\ \  __ \  \ \  __\   \ \ \  \ \___  \  \/_/\ \/
+ \ \_\ \_\  \ \_____\  \ \_\  \/\_____\    \ \_\
+  \/_/\/_/   \/_____/   \/_/   \/_____/     \/_/
+                                                    ");
             Console.WriteLine("Alright people, how secure of a bank we hittin??");
             string bankDifficultyString = Console.ReadLine();
             try
