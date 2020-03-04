@@ -8,6 +8,8 @@ namespace heist
         static void Main(string[] args)
         {
             int simulation;
+            int totalRuns;
+            int percentage;
             int bankDifficulty;
             Console.BackgroundColor = ConsoleColor.Black;
             List<Crew> Crew = new List<Crew>();
@@ -65,11 +67,13 @@ namespace heist
                     try
                     {
                         simulation = int.Parse(simulationString);
+                        totalRuns = int.Parse(simulationString);
                     }
                     catch (Exception ex)
                     {
                         Console.WriteLine($"{simulationString} is not number pal. If you don't know I'll just run it once for now.");
                         simulation = 1;
+                        totalRuns = 1;
                     }
                     break;
                 }
@@ -147,7 +151,8 @@ namespace heist
                 simulation -= 1;
             }
             Console.WriteLine($"During this round of simulations, we found {success} successful bank robberieis and {failure} failures.");
-            Console.WriteLine($"You're looking at a (({success} / {simulation}) * 100) % success rating.");
+            percentage = (success / totalRuns) * 100;
+            Console.WriteLine($"You're looking at a {percentage} % success rating.");
         }
     }
 }
