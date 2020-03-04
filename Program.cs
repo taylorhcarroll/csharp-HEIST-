@@ -9,7 +9,9 @@ namespace heist
         {
             int simulation;
             int bankDifficulty;
+            Console.BackgroundColor = ConsoleColor.Black;
             List<Crew> Crew = new List<Crew>();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
 ||====================================================================||
 ||//$\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//$\\||
@@ -27,6 +29,7 @@ namespace heist
 ||\\$//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\$//||
 ||====================================================================||
             ");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine();
             Console.WriteLine("Plan Your...");
             Console.WriteLine(@"
@@ -37,6 +40,7 @@ namespace heist
   \/_/\/_/   \/_____/   \/_/   \/_____/     \/_/
                                                     ");
             Console.WriteLine("Alright people, how secure of a bank we hittin??");
+            Console.ForegroundColor = ConsoleColor.White;
             string bankDifficultyString = Console.ReadLine();
             try
             {
@@ -44,6 +48,7 @@ namespace heist
             }
             catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"{bankDifficultyString} is not a number pal. I need a number that specifies how diffiicult this heist is gonna be. As punishment I'm settin the difficulty to one thousand. Haha try that!");
                 bankDifficulty = 1000;
             }
