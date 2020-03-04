@@ -10,7 +10,6 @@ namespace heist
             int simulation;
             int bankDifficulty;
             List<Crew> Crew = new List<Crew>();
-            Console.WriteLine("Plan Your Heist!");
             Console.WriteLine(@"
 ||====================================================================||
 ||//$\\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//$\\||
@@ -23,12 +22,13 @@ namespace heist
 ||<<|      L38036133B        *\\  |\_/  //* series                 |>>||
 ||>>|  12                     *\\/___\_//*   1989                  |<<||
 ||<<\      Treasurer     ________/HEIST\_________     Secretary 12 />>||
-||//$\                 ~|  HIDDEN IN PLAIN SIGHT |~               /$\\||
-||(100)===================  ONE HUNDRED DOLLARS =================(100)||
+||//$\                ~| TEXTUAL ESPIONAGE ACTION |~              /$\\||
+||(100)=================  HIDDEN IN PLAIN SIGHT  ================(100)||
 ||\\$//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\$//||
 ||====================================================================||
             ");
             Console.WriteLine();
+            Console.WriteLine("Plan Your Heist!");
             Console.WriteLine("Alright people, how secure of a bank we hittin??");
             string bankDifficultyString = Console.ReadLine();
             try
@@ -43,7 +43,8 @@ namespace heist
             while (true)
             {
                 Crew teamMember;
-                Console.WriteLine("What's the guy's name? I'll have Big Eaze do a background check on em.");
+                Console.WriteLine("Alright, what's their name? I'll have Big Eaze do a background check on em.");
+                Console.WriteLine("I'll keep adding them to the list as long as you keep talking.");
                 string name = Console.ReadLine();
                 if (name == "")
                 {
@@ -62,21 +63,24 @@ namespace heist
                 }
                 else
                 {
-                    Console.WriteLine("What is the team member's skill level?");
-                    string skillLevelString = Console.ReadLine();
                     int skillLevel;
-
-                    try
+                    while (true)
                     {
-                        skillLevel = int.Parse(skillLevelString);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"{skillLevelString} is not a number, so you're getting 10.");
-                        skillLevel = 10;
+                        Console.WriteLine($"What is {name}'s skill level?");
+                        string skillLevelString = Console.ReadLine();
+
+                        try
+                        {
+                            skillLevel = int.Parse(skillLevelString);
+                            break;
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"{skillLevelString} is not a number. Try again pal.");
+                        }
                     }
 
-                    Console.WriteLine("How would you rate the team member's courage factor?");
+                    Console.WriteLine($"How would you rate {name}'s courage factor?");
                     string courageFactorString = Console.ReadLine();
                     decimal courageFactor;
 

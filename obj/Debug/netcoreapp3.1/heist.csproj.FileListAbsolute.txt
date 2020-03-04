@@ -1,3 +1,10 @@
 /Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.csprojAssemblyReference.cache
 /Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.AssemblyInfoInputs.cache
 /Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.AssemblyInfo.cs
+/Users/taylorcarroll/workspace/C37/heist/bin/Debug/netcoreapp3.1/heist.deps.json
+/Users/taylorcarroll/workspace/C37/heist/bin/Debug/netcoreapp3.1/heist.runtimeconfig.json
+/Users/taylorcarroll/workspace/C37/heist/bin/Debug/netcoreapp3.1/heist.runtimeconfig.dev.json
+/Users/taylorcarroll/workspace/C37/heist/bin/Debug/netcoreapp3.1/heist.dll
+/Users/taylorcarroll/workspace/C37/heist/bin/Debug/netcoreapp3.1/heist.pdb
+/Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.dll
+/Users/taylorcarroll/workspace/C37/heist/obj/Debug/netcoreapp3.1/heist.pdb
