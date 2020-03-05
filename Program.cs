@@ -12,7 +12,7 @@ namespace heist
             int percentage;
             int bankDifficulty;
             Console.BackgroundColor = ConsoleColor.Black;
-            List<Crew> Crew = new List<Crew>();
+            List<Dictionary<string, string>> Crew = new List<Dictionary<string, string>>();
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
 ||====================================================================||
@@ -44,80 +44,41 @@ namespace heist
             Console.WriteLine("Alright people, how secure of a bank we hittin??");
             Console.ForegroundColor = ConsoleColor.White;
             string bankDifficultyString = Console.ReadLine();
-            try
-            {
-                bankDifficulty = int.Parse(bankDifficultyString);
-            }
-            catch (Exception ex)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{bankDifficultyString} is not a number pal. I need a number that specifies how diffiicult this heist is gonna be. As punishment I'm settin the difficulty to one thousand. Haha try that!");
-                bankDifficulty = 1000;
-            }
+            bankDifficulty = int.Parse(bankDifficultyString);
+
             while (true)
             {
-                Crew teamMember;
+                Dictionary<string, string> teamMember = new Dictionary<string, string>();
                 Console.WriteLine("Alright, what's their name? I'll have Big Eaze do a background check on em.");
                 Console.WriteLine("I'll keep adding them to the list as long as you keep talking.");
                 string name = Console.ReadLine();
+                teamMember.Add("Name", name);
                 if (name == "")
                 {
                     Console.WriteLine("ok pal, how many times do we run the simulation??");
                     string simulationString = Console.ReadLine();
-                    try
-                    {
-                        simulation = int.Parse(simulationString);
-                        totalRuns = int.Parse(simulationString);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"{simulationString} is not number pal. If you don't know I'll just run it once for now.");
-                        simulation = 1;
-                        totalRuns = 1;
-                    }
+                    simulation = int.Parse(simulationString);
+                    totalRuns = int.Parse(simulationString);
                     break;
                 }
                 else
                 {
-                    int skillLevel;
-                    while (true)
+                    // int skillLevel;
+                    // while (true)
                     {
                         Console.WriteLine($"What is {name}'s skill level?");
                         string skillLevelString = Console.ReadLine();
-
-                        try
-                        {
-                            skillLevel = int.Parse(skillLevelString);
-                            break;
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"{skillLevelString} is not a number. Try again pal.");
-                        }
+                        teamMember.Add("SkillLevel", skillLevelString);
                     }
 
                     Console.WriteLine($"How would you rate {name}'s courage factor?");
                     string courageFactorString = Console.ReadLine();
-                    decimal courageFactor;
+                    teamMember.Add("CourageFactor", courageFactorString);
+                    foreach (KeyValuePair<string, string> attribute in teamMember)
+                    {
+                        Console.WriteLine($"{attribute.Key} is {attribute.Value}");
 
-                    try
-                    {
-                        courageFactor = decimal.Parse(courageFactorString);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine($"what's that? I didn't quite catch that. I don't think that was a valid number. I'm setting them to 1.0.");
-                        courageFactor = 1.0M;
-                    }
-                    teamMember = new Crew()
-                    {
-                        Name = name,
-                        SkillLevel = skillLevel,
-                        CourageFactor = courageFactor
                     };
-                    Console.WriteLine($"Name: {teamMember.Name}");
-                    Console.WriteLine($"Skill Level: {teamMember.SkillLevel}");
-                    Console.WriteLine($"Courage Factor: {teamMember.CourageFactor}");
                     Crew.Add(teamMember);
                 }
             }
@@ -125,10 +86,11 @@ namespace heist
             int failure = 0;
             Console.WriteLine($"Alright, you've assembled a crew of {Crew.Count} people.");
             int teamSkill = 0;
-            foreach (var item in Crew)
+            foreach (var member in Crew)
             {
-                Console.WriteLine($"Name:{item.Name} Skill Level: {item.SkillLevel} Courage Factor: {item.CourageFactor}");
-                teamSkill += item.SkillLevel;
+                Console.WriteLine($"Name:{member["Name"]} Skill Level: {member["SkillLevel"]} Courage Factor: {member["CourageFactor"]}");
+                int skillLVL = int.Parse(member["SkillLevel"]);
+                teamSkill += skillLVL;
             }
             while (simulation > 0)
             {
